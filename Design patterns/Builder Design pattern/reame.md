@@ -4,7 +4,7 @@
 	•	When object creation involves a multi-step process.
 	•	When constructors with many parameters are becoming hard to manage (telescoping constructors).
 
-⸻
+
 
 ## Real life example 
 Imagine you’re ordering a custom burger at a restaurant. You might choose:
@@ -16,7 +16,6 @@ Imagine you’re ordering a custom burger at a restaurant. You might choose:
 
 Each customer can customize it differently. The builder pattern helps create such a custom object step-by-step.
 
-⸻
 
 ## ✅ Advantages
 	•	Improves code readability and maintainability.
@@ -28,11 +27,9 @@ Each customer can customize it differently. The builder pattern helps create suc
 	•	More boilerplate code.
 	•	Not ideal for very simple objects.
 
-⸻
 
 ## 🛠 Builder Pattern in Libraries
 	•	StringBuilder in Java is a real-world usage.
 	•	Lombok @Builder annotation simplifies it.
 	•	Common in libraries like Jackson (for JSON) and builders for HTTP clients.
 
-⸻
