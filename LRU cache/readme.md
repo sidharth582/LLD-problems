@@ -20,7 +20,7 @@ The cache should support the following operations in **O(1)** time complexity:
 ---
 
 
-🧱 Design Approach
+## 🧱 Design Approach
 	•	Use a HashMap to store the mapping of key → Node for O(1) access.
 	•	Use a Doubly Linked List to track the order of usage:
 	•	Most recently used → front (head)
@@ -32,3 +32,5 @@ The cache should support the following operations in **O(1)** time complexity:
 	•	If new key:
 	•	If at capacity, evict the tail node.
 	•	Insert new node at the front.
+
+---
