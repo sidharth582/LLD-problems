@@ -1,5 +1,7 @@
 # Basic Singleton (Eager Initialization)
 
+
+
 public class EagerSingleton {
     private static final EagerSingleton instance = new EagerSingleton();
 
