@@ -3,7 +3,7 @@
 ➕ Simple and thread-safe
 ➖ Not lazy, instance created even if not used
 
-public class EagerSingleton {
+    public class EagerSingleton {
 
     private static final EagerSingleton instance = new EagerSingleton();
 
