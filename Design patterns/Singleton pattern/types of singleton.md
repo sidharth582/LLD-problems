@@ -1,3 +1,12 @@
+
+# Singleton is a creational design pattern that ensures a class has only one instance and provides a global point of access to it. 
+
+    Use Cases of Singleton
+	•	Logging frameworks (Logger)
+	•	Configuration settings
+	•	Thread pools
+	•	Caches
+
 # Basic Singleton (Eager Initialization)
 
 ➕ Simple and thread-safe
