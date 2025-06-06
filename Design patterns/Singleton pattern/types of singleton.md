@@ -6,6 +6,9 @@
 	•	Configuration settings
 	•	Thread pools
 	•	Caches
+    •	Database connection pools
+	•	Registry objects
+	•	Load balancers
 
 # Basic Singleton (Eager Initialization)
 
