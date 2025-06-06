@@ -2,8 +2,11 @@
 
 
 public class EagerSingleton {
+
     private static final EagerSingleton instance = new EagerSingleton();
+
     private EagerSingleton() {}  // private constructor
+    
     public static EagerSingleton getInstance() {
         return instance;
     }
