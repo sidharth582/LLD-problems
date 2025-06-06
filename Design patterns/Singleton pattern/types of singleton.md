@@ -5,70 +5,83 @@
 
     public class EagerSingleton {
 
-    private static final EagerSingleton instance = new EagerSingleton();
+        private static final EagerSingleton instance = new EagerSingleton();
 
-    private EagerSingleton() {}  // private constructor
+        private EagerSingleton() {}  // private constructor
 
-    public static EagerSingleton getInstance() {
-        return instance;
+        public static EagerSingleton getInstance() {
+            return instance;
+        }
     }
-}
 
 # Lazy Initialization (Non-thread-safe)
 
-public class LazySingleton {
-    private static LazySingleton instance;
+➕ Lazy — only created when needed
+➖ Not thread-safe
 
-    private LazySingleton() {}
+    public class LazySingleton {
+        private static LazySingleton instance;
 
-    public static LazySingleton getInstance() {
-        if (instance == null) {
-            instance = new LazySingleton();  // Not thread-safe!
+        private LazySingleton() {}
+
+        public static LazySingleton getInstance() {
+            if (instance == null) {
+                instance = new LazySingleton();  // Not thread-safe!
+            }
+            return instance;
         }
-        return instance;
     }
-}
 
 # 3. Lazy Initialization (Thread-safe with synchronized)
 
-public class SynchronizedSingleton {
-    private static SynchronizedSingleton instance;
+➕ Thread-safe
+➖ Performance hit due to synchronized
 
-    private SynchronizedSingleton() {}
+    public class SynchronizedSingleton {
+        private static SynchronizedSingleton instance;
 
-    public static synchronized SynchronizedSingleton getInstance() {
-        if (instance == null) {
-            instance = new SynchronizedSingleton();
+        private SynchronizedSingleton() {}
+
+        public static synchronized SynchronizedSingleton getInstance() {
+            if (instance == null) {
+                instance = new SynchronizedSingleton();
+            }
+            return instance;
         }
-        return instance;
     }
-}
 
 # Double-Checked Locking (Best of both worlds)
+➕ Thread-safe and fast
+➕ Lazy initialization
+➖ Slightly complex syntax
 
-public class DoubleCheckedLockingSingleton {
-    private static volatile DoubleCheckedLockingSingleton instance;
+    public class DoubleCheckedLockingSingleton {
+        private static volatile DoubleCheckedLockingSingleton instance;
 
-    private DoubleCheckedLockingSingleton() {}
+        private DoubleCheckedLockingSingleton() {}
 
-    public static DoubleCheckedLockingSingleton getInstance() {
-        if (instance == null) {
-            synchronized (DoubleCheckedLockingSingleton.class) {
-                if (instance == null) {
-                    instance = new DoubleCheckedLockingSingleton();
+        public static DoubleCheckedLockingSingleton getInstance() {
+            if (instance == null) {
+                synchronized (DoubleCheckedLockingSingleton.class) {
+                    if (instance == null) {
+                        instance = new DoubleCheckedLockingSingleton();
+                    }
                 }
             }
+            return instance;
         }
-        return instance;
     }
-}
 
 # Enum Singleton (Most Robust)
 
-public enum EnumSingleton {
-    INSTANCE;
+➕ Thread-safe
+➕ Serialization safe
+➖ Hard to lazy-initialize
 
-    public void doSomething() {
-        System.out.println("Doing something...");
+    public enum EnumSingleton {
+        INSTANCE;
+
+        public void doSomething() {
+            System.out.println("Doing something...");
+        }
     }
-}
