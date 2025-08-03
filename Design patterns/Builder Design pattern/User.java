@@ -1,41 +1,50 @@
 public class User{
-
     //required params
-    private final String name;
-    private final String email;
+    private final String Firstname;
+    private final String Lastname;
+    
 
     //Optional params
+    private final String email;
     private final int age;
     private final String address;
 
-    public User(Builder builder){
-        this.name=builder.name;
+    public User(UserBuilder builder){
+        this.Firstname = builder.Firstname;
+        this.Lastname = builder.Lastname;
         this.email=builder.email;
         this.age=builder.age;
         this.address=builder.address;
     }
 
 
-    public static class Builder{
+    public static class UserBuilder{
         //rewuired params
-        private final String name;
-        private final String email;
+        private final String Firstname;
+        private final String Lastname;
 
-        //optional param
+    
+        //optional params
+        private String email;
         private int age=0;
         private String address="";
 
-        public Builder(String name,String email){
-            this.name=name;
-            this.email=email;
+        public UserBuilder(String Firstname, String Lastname){
+            this.Firstname = Firstname;
+            this.Lastname = Lastname;
         }
 
-        public Builder age(int age){
+        public UserBuilder email(String email){
+            this.email=email;
+            return this;
+        }
+
+        public UserBuilder age(int age){
             this.age=age;
             return this;
         }
 
-        public Builder address(String address){
+        public  UserBuilder address(String address){
             this.address=address;
             return this;
         }
@@ -46,6 +55,6 @@ public class User{
     }
 
     public String toString() {
-            return "User{name='" + name + "', email='" + email + "', age=" + age + ", address='" + address + "'}";
+            return "User{name='" + Firstname + " "+ Lastname + "', email='" + email + "', age=" + age + ", address='" + address + "'}";
     }
 }
