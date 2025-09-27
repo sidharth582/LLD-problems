@@ -1,3 +1,5 @@
+import java.util.*;
+
 class LRUCache {
     class Node {
         int key, value;
@@ -9,7 +11,7 @@ class LRUCache {
     }
 
     private int capacity;
-    private java.util.HashMap<Integer, Node> map;
+    private HashMap<Integer, Node> map;
     private Node head, tail;
 
     public LRUCache(int capacity) {
